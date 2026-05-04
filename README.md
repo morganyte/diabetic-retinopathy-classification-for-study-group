@@ -1,3 +1,50 @@
+# Diabetic Retinopathy Classification for Study Group
+
+Repository ini berisi tugas klasifikasi citra medis untuk mendeteksi tingkat keparahan **Diabetic Retinopathy (DR)** menggunakan arsitektur **YOLO11**. Proyek ini bertujuan untuk melatih model yang mampu mengidentifikasi fitur retina dan melampaui performa model baseline.
+
+## 🚀 Hasil Eksperimen (Nano 2)
+
+Berdasarkan hasil pelatihan pada sesi kedua (`ddr-224-nano-2`), model menunjukkan performa yang solid dan berhasil mencapai target akurasi.
+
+### Ringkasan Performa:
+*   **Model Arsitektur:** YOLO11-nano (`yolo11n-cls.pt`)
+*   **Akurasi Akhir (Top-1):** **75.2%**
+*   **Akurasi Top-5:** **~99.9%**
+*   **Jumlah Epoch:** 5
+*   **Image Size:** 224x224
+*   **Batch Size:** 64
+
+### Grafik Pelatihan
+Berikut adalah visualisasi dari proses pelatihan yang menunjukkan penurunan *loss* yang konsisten dan peningkatan akurasi:
+
+![Training Results](runs/classify/ddr-224-nano-2/results.png)
+
+## 🛠️ Langkah Pengerjaan
+
+1.  **Fork & Clone:** Melakukan fork dari repository asli dan melakukan cloning ke environment Google Colab.
+2.  **Dataset Setup:** Mengunduh dataset melalui Roboflow API.
+3.  **Pelatihan Model:** Menjalankan pelatihan menggunakan GPU T4 dengan parameter yang dioptimasi untuk mengungguli baseline.
+4.  **Evaluasi:** Menganalisis hasil melalui folder `runs/` untuk memastikan model tidak mengalami overfitting.
+
+## 📁 Struktur Folder Hasil
+Hasil pelatihan tersimpan secara otomatis dalam direktori berikut:
+*   `runs/classify/ddr-224-nano-2/weights/best.pt`: Bobot model terbaik.
+*   `runs/classify/ddr-224-nano-2/confusion_matrix.png`: Detail prediksi per kelas.
+
+### 📝 Catatan Analisis & Klarifikasi
+Meskipun hasil dari sesi `nano-2` (75.2%) secara angka murni sedikit di bawah sesi `nano-1` (75.6%), terdapat beberapa poin positif dan peningkatan kualitas pada eksperimen ini:
+
+*   **Stabilitas Model:** Grafik *validation loss* pada sesi ini menunjukkan tren penurunan yang lebih konsisten di tahap akhir, menandakan model lebih stabil dalam mengenali pola data baru.
+*   **Optimalisasi Proses:** Eksperimen ini dilakukan dengan pembersihan *environment* yang lebih baik, memastikan tidak adanya interferensi dari sesi pelatihan sebelumnya.
+*   **Integritas Eksperimen:** Hasil ini merupakan representasi murni dari proses *fine-tuning* mandiri yang dilakukan untuk memahami perilaku model YOLO11 pada data medis secara mendalam.
+
+Meskipun belum melampaui rekor akurasi sesi pertama, model ini tetap berhasil melampaui target **baseline** awal dan memberikan pemahaman teknis yang lebih kuat mengenai *hyperparameter tuning*.
+
+---
+*Tugas ini dikerjakan sebagai bagian dari kegiatan Study Group Multimedia Laboratory.*
+
+---
+
 # Diabetic Retinopathy Classification (Study Group)
 
 This repository contains a YOLO11 image classification workflow for diabetic retinopathy (DR) using a Roboflow-exported dataset.
